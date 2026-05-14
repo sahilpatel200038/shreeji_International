@@ -1,0 +1,109 @@
+import type { LucideIcon } from "lucide-react";
+import {
+  Plane,
+  Rocket,
+  PackageOpen,
+  FileText,
+  ShoppingBag,
+  ShieldCheck,
+  Clock3,
+  Box,
+  Radar,
+  Wallet,
+  Globe2,
+  Headset,
+} from "lucide-react";
+
+export const serviceItems: { title: string; description: string; icon: LucideIcon }[] = [
+  {
+    title: "International Shipping",
+    description: "Door-to-door worldwide parcel movement with end-to-end reliability.",
+    icon: Plane,
+  },
+  {
+    title: "Express Delivery",
+    description: "Time-critical delivery lanes with priority handling and dispatch.",
+    icon: Rocket,
+  },
+  {
+    title: "Air Cargo",
+    description: "Secure high-volume cargo movement for enterprise-grade logistics.",
+    icon: PackageOpen,
+  },
+  {
+    title: "Document Courier",
+    description: "Confidential document movement with chain-of-custody safeguards.",
+    icon: FileText,
+  },
+  {
+    title: "E-commerce Logistics",
+    description: "Order fulfillment and returns logistics designed for growing brands.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Customs Clearance",
+    description: "Compliance-first customs workflows to reduce international delays.",
+    icon: ShieldCheck,
+  },
+];
+
+export const stats = [
+  { label: "Countries Served", value: 50, suffix: "+" },
+  { label: "Deliveries Completed", value: 10000, suffix: "+" },
+  { label: "Support Availability", value: 24, suffix: "/7" },
+  { label: "Safe Delivery Rate", value: 99, suffix: "%" },
+];
+
+export const reasons: { title: string; description: string; icon: LucideIcon }[] = [
+  {
+    title: "Fast Delivery",
+    description: "Optimized lanes and automated routing reduce transit time.",
+    icon: Clock3,
+  },
+  {
+    title: "Secure Packaging",
+    description: "Specialized handling and packaging protocols for every shipment.",
+    icon: Box,
+  },
+  {
+    title: "Real-time Tracking",
+    description: "Live milestone visibility with proactive status updates.",
+    icon: Radar,
+  },
+  {
+    title: "Affordable Pricing",
+    description: "Transparent plans built for both personal and business shipping.",
+    icon: Wallet,
+  },
+  {
+    title: "Worldwide Network",
+    description: "A connected global network across key trade corridors.",
+    icon: Globe2,
+  },
+  {
+    title: "Customer Support",
+    description: "Dedicated logistics support with quick human assistance.",
+    icon: Headset,
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Aarav Shah",
+    role: "Founder, Nova Gadgets",
+    quote:
+      "Shreeji helped us scale global deliveries with speed and consistency. Their tracking and communication are exceptional.",
+  },
+  {
+    name: "Mira Kapoor",
+    role: "Operations Lead, Studio Bloom",
+    quote:
+      "Premium service with practical pricing. International document and parcel dispatch is now smooth for our teams.",
+  },
+  {
+    name: "Ritesh Verma",
+    role: "Export Manager, Orion Textiles",
+    quote:
+      "Customs handling and proactive updates made cross-border shipping far more predictable for our business.",
+  },
+];

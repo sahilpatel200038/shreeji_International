@@ -1,0 +1,31 @@
+.glass-card {
+  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  background: color-mix(in srgb, var(--background) 82%, transparent);
+  box-shadow: 0 20px 45px rgba(8, 10, 15, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.service-card {
+  background: linear-gradient(120deg, rgba(190, 20, 34, 0.55), rgba(239, 99, 60, 0.35), rgba(255, 255, 255, 0.18));
+  transition: 250ms ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 24px 40px rgba(190, 20, 34, 0.18);
+}
+
+.gradient-divider {
+  background: linear-gradient(90deg, transparent, rgba(190, 20, 34, 0.7), transparent);
+}
+
+.map-card{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  -moz-backdrop-filter: none;
+  -ms-backdrop-filter: none;
+  -o-backdrop-filter: none;
+  backdrop-filter: none;
+}
