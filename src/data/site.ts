@@ -49,7 +49,7 @@ export const serviceItems: { title: string; description: string; icon: LucideIco
 
 export const stats = [
   { label: "Countries Served", value: 50, suffix: "+" },
-  { label: "Deliveries Completed", value: 10000, suffix: "+" },
+  { label: "Deliveries Completed", value: 10, suffix: "k+" },
   { label: "Support Availability", value: 24, suffix: "/7" },
   { label: "Safe Delivery Rate", value: 99, suffix: "%" },
 ];
@@ -89,21 +89,21 @@ export const reasons: { title: string; description: string; icon: LucideIcon }[]
 
 export const testimonials = [
   {
-    name: "Aarav Shah",
-    role: "Founder, Nova Gadgets",
+    name: "Jasmin Valani",
+    role: "UK",
     quote:
-      "Shreeji helped us scale global deliveries with speed and consistency. Their tracking and communication are exceptional.",
+      "Highly professional and reliable service. Our shipment from India to the UK was delivered within 4–5 days. Fast delivery, excellent communication, and a seamless experience throughout.",
   },
   {
-    name: "Mira Kapoor",
-    role: "Operations Lead, Studio Bloom",
+    name: "Purvi Patel",
+    role: "USA",
     quote:
-      "Premium service with practical pricing. International document and parcel dispatch is now smooth for our teams.",
+      "Outstanding service and professional packaging. We received the parcel safely and were impressed with the care taken throughout the process. We look forward to working with you again in the future.",
   },
   {
-    name: "Ritesh Verma",
-    role: "Export Manager, Orion Textiles",
+    name: "Hiral Khatri",
+    role: "Canada",
     quote:
-      "Customs handling and proactive updates made cross-border shipping far more predictable for our business.",
+      "I had a great experience with Shreeji International Courier service! The free pickup made the process super convenient, and the door-to-door delivery was smooth and hassle-free.",
   },
 ];

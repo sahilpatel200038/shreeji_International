@@ -78,9 +78,11 @@ export function HeroSection() {
               <motion.img
                 className="w-full"
                 src="/international-courier-services-500x500.png"
-                alt="Global coverage"
+                alt="Shreeji International Courier — fast and reliable worldwide parcel, document, and cargo delivery services"
                 width={500}
-                height={206}
+                height={500}
+                fetchPriority="high"
+                decoding="async"
                 animate={{ y: [0, -14, 0] }}
                 transition={{
                   duration: 2.2,

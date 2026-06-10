@@ -25,7 +25,7 @@ export function Footer() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           <div className="space-y-1">
             <div className="flex items-center">
-              <img src="/logo.png" alt="Shreeji logo" width={100} height={100} className=" rounded-lg object-contain" />
+              <img src="/logo.png" alt="Shreeji International Courier logo" width={100} height={100} className=" rounded-lg object-contain" loading="lazy" />
               {/* <div>
                 <p className="text-lg font-semibold tracking-wide text-slate-900">Shreeji International</p>
               </div> */}

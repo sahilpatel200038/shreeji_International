@@ -24,7 +24,7 @@ export function Navbar() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 mx-auto w-full max-w-7xl px-4 pt-4"
     >
-      <nav className="glass-card flex items-center justify-between rounded-2xl px-5 py-3">
+      <nav className="glass-card flex items-center justify-between rounded-2xl px-5 py-3" aria-label="Main navigation">
         <a href="/" className="flex items-center gap-3">
           <img src="/logo.png" alt="Shreeji International Courier logo" width={70} height={70} />
           <div>

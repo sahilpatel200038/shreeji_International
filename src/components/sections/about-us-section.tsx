@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "3.5", label: "Years Experience" },
-  { value: "23", label: "Project Challenge" },
-  { value: "830+", label: "Positive Reviews" },
-  { value: "100K", label: "Trusted Students" },
+  { value: "5+", label: "Years Experience" },
+  { value: "50+", label: "Countries Served" },
+  { value: "97%", label: "Positive Reviews" },
+  { value: "999+", label: "Trusted Customers" },
 ];
 
 export function AboutUsSection() {
@@ -16,11 +16,12 @@ export function AboutUsSection() {
             How It Started
           </span>
           <h2 className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--foreground)] sm:text-5xl">
-            Our Dream is Global Learning Transformation
+            Our Story — Delivering Trust Across the Globe
           </h2>
           <p className="max-w-xl text-base leading-8 text-[var(--muted)] sm:text-lg">
-            We create premium learning experiences that empower students across the globe with trusted guidance, modern pedagogy,
-            and a vision for future-ready education. Our mission is to make world-class learning accessible, inspiring, and transformational.
+            Founded in Ahmedabad, Shreeji International Courier was built on a single promise — every shipment matters.
+            From personal parcels to business cargo, we connect India to 50+ countries with reliable door-to-door delivery,
+            transparent handling, and dedicated 24/7 support you can count on.
           </p>
         </div>
 
@@ -34,19 +35,21 @@ export function AboutUsSection() {
             <div className="absolute -left-10 top-10 h-28 w-28 rounded-full bg-brand-red/10 blur-3xl" />
             <div className="absolute -right-10 top-8 h-24 w-24 rounded-full bg-brand-orange/10 blur-3xl" />
             <img
-              src="/hero-banner.png"
-              alt="Premium learning transformation"
+              src="/about.png"
+              alt="Shreeji International Courier — trusted global shipping and logistics services from Ahmedabad, India"
               className="h-[340px] w-full object-cover object-center sm:h-[400px]"
               loading="lazy"
+              width="800"
+              height="400"
             />
-            <div className="absolute inset-x-4 bottom-4 rounded-[1.6rem] border border-[var(--border)] bg-[var(--surface)]/95 p-5 shadow-lg backdrop-blur-sm transition-colors duration-300">
+            {/* <div className="absolute inset-x-4 bottom-4 rounded-[1.6rem] border border-[var(--border)] bg-[var(--surface)]/95 p-5 shadow-lg backdrop-blur-sm transition-colors duration-300">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
                 Global education excellence
               </p>
               <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
                 Designed for ambitious learners, our programs deliver inspiring guidance, measurable progress, and real-world outcomes.
               </p>
-            </div>
+            </div> */}
           </motion.div>
 
           <div className="grid gap-4 sm:grid-cols-2">
