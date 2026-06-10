@@ -1,9 +1,18 @@
+import { type MouseEvent } from "react";
 import { MoonStar, SunMedium } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
-const links = ["Services", "Tracking", "Coverage", "Testimonials", "Contact"];
+const links = [ "About", "Services", "Coverage", "Testimonials" ];
+
+function scrollToSection(event: MouseEvent<HTMLAnchorElement>, sectionId: string) {
+  event.preventDefault();
+
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 export function Navbar() {
   const { theme, toggleTheme, mounted } = useTheme();
@@ -26,7 +35,12 @@ export function Navbar() {
 
         <div className="hidden items-center gap-7 text-sm text-muted lg:flex">
           {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`} className="hover:text-foreground">
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              onClick={(event) => scrollToSection(event, link.toLowerCase())}
+              className="hover:text-foreground"
+            >
               {link}
             </a>
           ))}
@@ -40,9 +54,9 @@ export function Navbar() {
           >
             {mounted && theme === "dark" ? <SunMedium size={17} /> : <MoonStar size={17} />}
           </button>
-          <Button href="#contact" className="hidden sm:inline-flex">
+          {/* <Button href="#contact" className="hidden sm:inline-flex">
             Get Quote
-          </Button>
+          </Button> */}
         </div>
       </nav>
     </motion.header>

@@ -9,6 +9,7 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { TrackingSection } from "@/components/sections/tracking-section";
 import { WhyChooseSection } from "@/components/sections/why-choose-section";
+import { AboutUsSection } from "@/components/sections/about-us-section";
 import { LoadingScreen } from "@/components/animations/loading-screen";
 
 export function LandingPage() {
@@ -26,12 +27,13 @@ export function LandingPage() {
         <Navbar />
         <HeroSection />
         <StatsSection />
+        <AboutUsSection />
         <ServicesSection />
-        <TrackingSection />
+        {/* <TrackingSection /> */}
         <WhyChooseSection />
         <GlobalCoverageSection />
         <TestimonialsSection />
-        <CtaBanner />
+        {/* <CtaBanner /> */}
         <Footer />
       </div>
     </>

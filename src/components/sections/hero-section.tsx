@@ -24,7 +24,7 @@ export function HeroSection() {
             </p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.7 }}
@@ -34,7 +34,7 @@ export function HeroSection() {
             <Button href="#contact" variant="secondary">
               Get Quote
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div

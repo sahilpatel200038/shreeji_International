@@ -37,7 +37,7 @@ export const serviceItems: { title: string; description: string; icon: LucideIco
   },
   {
     title: "E-commerce Logistics",
-    description: "Order fulfillment and returns logistics designed for growing brands.",
+    description: "Order fulfillment logistics designed for growing brands.",
     icon: ShoppingBag,
   },
   {
@@ -65,11 +65,11 @@ export const reasons: { title: string; description: string; icon: LucideIcon }[]
     description: "Specialized handling and packaging protocols for every shipment.",
     icon: Box,
   },
-  {
-    title: "Real-time Tracking",
-    description: "Live milestone visibility with proactive status updates.",
-    icon: Radar,
-  },
+  // {
+  //   title: "Real-time Tracking",
+  //   description: "Live milestone visibility with proactive status updates.",
+  //   icon: Radar,
+  // },
   {
     title: "Affordable Pricing",
     description: "Transparent plans built for both personal and business shipping.",

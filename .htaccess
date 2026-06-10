@@ -1,0 +1,18 @@
+# Hostinger Apache configuration for Vite SPA
+# Ensure all routes are served by index.html and static assets are served normally.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories directly.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Redirect all other requests to index.html for client-side routing.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Optional: disable directory listings
+Options -Indexes
