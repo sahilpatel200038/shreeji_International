@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { serviceItems } from "@/data/site";
+import { sectionContainer } from "@/lib/utils";
 
 export function ServicesSection() {
   return (
-    <section id="services" className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
+    <section id="services" className={sectionContainer}>
       <SectionHeading
         eyebrow="Services"
         title="Smart logistics capabilities for every shipping need"

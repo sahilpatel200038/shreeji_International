@@ -22,15 +22,15 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 mx-auto w-full max-w-7xl px-4 pt-4"
+      className="fixed inset-x-0 top-0 z-50 px-4 py-4"
     >
-      <nav className="glass-card flex items-center justify-between rounded-2xl px-5 py-3" aria-label="Main navigation">
+      <nav className="glass-card mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-5 py-3" aria-label="Main navigation">
         <a href="/" className="flex items-center gap-3">
           <img src="/logo.png" alt="Shreeji International Courier logo" width={70} height={70} />
-          <div>
+          {/* <div>
             <p className="text-sm font-semibold leading-tight">Shreeji International</p>
             <p className="text-xs text-muted">Courier Network</p>
-          </div>
+          </div> */}
         </a>
 
         <div className="hidden items-center gap-7 text-sm text-muted lg:flex">

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { reasons } from "@/data/site";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { sectionContainer } from "@/lib/utils";
 
 export function WhyChooseSection() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
+    <section className={sectionContainer}>
       <SectionHeading
         eyebrow="Why Choose Us"
         title="Built for trust, speed, and operational clarity"

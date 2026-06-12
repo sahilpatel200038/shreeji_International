@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { testimonials } from "@/data/site";
+import { sectionContainer } from "@/lib/utils";
 
 export function TestimonialsSection() {
   const [active, setActive] = useState(0);
@@ -12,7 +13,7 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
+    <section id="testimonials" className={sectionContainer}>
       <SectionHeading
         eyebrow="Testimonials"
         title="Trusted by fast-growing global businesses"

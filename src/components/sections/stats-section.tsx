@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { stats } from "@/data/site";
+import { sectionContainer } from "@/lib/utils";
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -30,7 +31,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
+    <section className={sectionContainer}>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((item, index) => (
           <motion.div

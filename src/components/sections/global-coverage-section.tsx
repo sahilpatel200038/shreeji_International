@@ -1,11 +1,12 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { coverageMapConfig } from "@/data/coverage-map";
+import { sectionContainer } from "@/lib/utils";
 
 const { width: W, height: H } = coverageMapConfig;
 
 export function GlobalCoverageSection() {
   return (
-    <section id="coverage" className="mx-auto w-full max-w-7xl px-4 py-12 sm:py-16 md:px-8">
+    <section id="coverage" className={sectionContainer}>
       <div className="w-full min-w-0 items-start grid grid-cols-1 lg:grid-cols-2 gap-4">
         <SectionHeading
           eyebrow="Global Coverage"

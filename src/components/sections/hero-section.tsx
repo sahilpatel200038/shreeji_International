@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { heroSection, heroSpanText } from "@/lib/hero/utils";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pb-16 pt-28 md:px-8 md:pb-24 md:pt-32">
+    <section className={heroSection}>
       <div className="hero-gradient absolute inset-0 -z-10" />
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:justify-center lg:gap-14">
         <div className="mx-auto w-full max-w-2xl space-y-8 text-center lg:mx-0 lg:max-w-xl lg:text-left">
@@ -12,7 +13,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+            <span className={heroSpanText}>
               Global Express Network
             </span>
             <h1 className="mt-5 text-balance text-4xl font-bold leading-tight text-white md:text-6xl">

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { sectionContainer } from "@/lib/utils";
 
 const stages = ["Shipment Booked", "In Transit", "At Destination Hub", "Out for Delivery", "Delivered"];
 
@@ -21,7 +22,7 @@ export function TrackingSection() {
   };
 
   return (
-    <section id="tracking" className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
+    <section id="tracking" className={sectionContainer}>
       <SectionHeading
         eyebrow="Tracking"
         title="Real-time shipment tracking dashboard"
