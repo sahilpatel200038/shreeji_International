@@ -1,37 +1,33 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "shreeji-international",
+  "version": "1.0.0",
   "private": true,
+  "description": "Shreeji International Courier - monorepo (React/Vite frontend + Laravel tracking API)",
+  "workspaces": [
+    "apps/frontend"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .ts,.tsx"
-  },
-  "dependencies": {
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.38.0",
-    "gsap": "^3.15.0",
-    "lucide-react": "^1.14.0",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "sass": "^1.99.0",
-    "tailwind-merge": "^3.6.0"
+    "dev": "concurrently -n frontend,backend -c blue,magenta \"npm run dev --workspace=apps/frontend\" \"npm run backend:serve\"",
+    "dev:frontend": "npm run dev --workspace=apps/frontend",
+    "dev:backend": "npm run backend:serve",
+    "build": "npm run build --workspace=apps/frontend",
+    "lint": "npm run lint --workspace=apps/frontend",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "npm run lint --workspace=apps/frontend",
+    "test:backend": "cd apps/backend && php artisan test",
+    "backend:serve": "cd apps/backend && php artisan serve --port=8010",
+    "backend:install": "cd apps/backend && composer install",
+    "backend:migrate": "cd apps/backend && php artisan migrate",
+    "backend:migrate:fresh": "cd apps/backend && php artisan migrate:fresh --seed",
+    "backend:seed": "cd apps/backend && php artisan db:seed",
+    "setup": "npm install && npm run backend:install && npm run backend:migrate:fresh"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.59.3",
-    "@typescript-eslint/parser": "^8.59.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "tailwindcss": "^4",
-    "typescript": "^5",
-    "vite": "^8.0.12"
-  }
+    "concurrently": "^9.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahilpatel200038/shreeji_International.git"
+  },
+  "license": "ISC"
 }

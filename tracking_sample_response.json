@@ -1,0 +1,395 @@
+[
+  {
+    "errors": false,
+    "tracking_no": "8040415",
+    "chargeable_weight": "29.00",
+    "forwarding_no": "1550 3215 4632 579",
+    "reference_no": "",
+    "awb_service_type": "1",
+    "pod_image": "",
+    "pod_signature": "",
+    "pcs": "1",
+    "item_data": "",
+    "forwarding_url": "",
+    "expected_datetime": null,
+    "job_no": "",
+    "docket_info": [
+      [
+        "AWB No.",
+        "8040415"
+      ],
+      [
+        "Booking Date",
+        "2026-09-10"
+      ],
+      [
+        "Consignee Name",
+        "KETAN PATEL"
+      ],
+      [
+        "Destination",
+        "United Kingdom"
+      ],
+      [
+        "Status",
+        "DELIVERED"
+      ],
+      [
+        "Delivery Date and Time",
+        "2026-09-17 10:14:00"
+      ],
+      [
+        "Receiver Name",
+        ""
+      ],
+      [
+        "Forwarding No.",
+        "1550 3215 4632 579"
+      ],
+      [
+        "Reason For Status",
+        ""
+      ],
+      [
+        "Origin",
+        "INDIA"
+      ],
+      [
+        "Origin_city",
+        ""
+      ],
+      [
+        "Destinantion_city",
+        ""
+      ],
+      [
+        "Consignee Company",
+        "KETAN PATEL"
+      ],
+      [
+        "Shipper Company",
+        "PATEL RITESHBHAI"
+      ],
+      [
+        "Customer Name",
+        "MITESH BHAI (SHREEJI NIKOL)"
+      ],
+      [
+        "Customer Code",
+        "A0426"
+      ],
+      [
+        "Customer type id",
+        "2"
+      ],
+      [
+        "Customer type",
+        "Cocourier"
+      ],
+      [
+        "Customer Company Name",
+        "International Courier"
+      ],
+      [
+        "Total Awb Created By Customer",
+        "133"
+      ],
+      [
+        "Total Awb Delivered By Customer",
+        "58"
+      ],
+      [
+        "Service Name",
+        "DTDC DPD ABOVE 10 PAX"
+      ],
+      [
+        "Shipper Name",
+        "PATEL RITESHBHAI"
+      ],
+      [
+        "Shipper City",
+        "AHMEDABAD"
+      ],
+      [
+        "Shipper State",
+        "GUJARAT"
+      ],
+      [
+        "Shipper Country",
+        "INDIA"
+      ],
+      [
+        "Consignee City",
+        "HARROW"
+      ],
+      [
+        "Consignee State",
+        "LONDON"
+      ],
+      [
+        "Consignee Country",
+        "UNITED KINGDOM"
+      ],
+      [
+        "Delivery Remark",
+        ""
+      ],
+      [
+        "Job Number",
+        ""
+      ],
+      [
+        "Service Code",
+        ""
+      ],
+      [
+        "Import AWB.",
+        "2"
+      ],
+      [
+        "Origin Hub",
+        "AHMEDABAD"
+      ]
+    ],
+    "docket_events": [
+      {
+        "id": "4506089",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 10:14:00",
+        "event_type": "API",
+        "event_description": "Delivered",
+        "event_location": "Radlett - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 11:54:15",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "delivered",
+        "event_remark": ""
+      },
+      {
+        "id": "4508831",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 15:47:00",
+        "event_type": "MANIFEST",
+        "event_description": "CUSTOMS CLEARED",
+        "event_location": "LONDON ( GATWICK )",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 12:47:43",
+        "updated_at": "2026-09-18 12:47:49",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4506087",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 09:16:00",
+        "event_type": "API",
+        "event_description": "Out for Delivery",
+        "event_location": "Radlett - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 11:54:15",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "redrs",
+        "event_remark": ""
+      },
+      {
+        "id": "4506085",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 05:56:00",
+        "event_type": "API",
+        "event_description": "Arrived Hub",
+        "event_location": "Radlett - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 11:54:15",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4506083",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 05:52:00",
+        "event_type": "API",
+        "event_description": "Arrived Hub",
+        "event_location": "Radlett - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 11:54:15",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4506081",
+        "docket_id": "182033",
+        "event_at": "2026-09-17 00:19:00",
+        "event_type": "API",
+        "event_description": "Arrived Hub",
+        "event_location": "Hub 4 Hinckley - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-18 11:54:15",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4476281",
+        "docket_id": "182033",
+        "event_at": "2026-09-15 09:58:00",
+        "event_type": "MANIFEST",
+        "event_description": "AWAITING CUSTOMS CLEARANCE",
+        "event_location": "LONDON ( GATWICK )",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-15 11:59:48",
+        "updated_at": "2026-09-15 11:59:54",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4475846",
+        "docket_id": "182033",
+        "event_at": "2026-09-15 07:55:00",
+        "event_type": "MANIFEST",
+        "event_description": "SHIPMENT ARRIVED",
+        "event_location": "LONDON ( GATWICK )",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-15 11:58:34",
+        "updated_at": "2026-09-15 11:58:38",
+        "event_state": "reincoming_manifest",
+        "event_remark": ""
+      },
+      {
+        "id": "4450775",
+        "docket_id": "182033",
+        "event_at": "2026-09-14 15:20:00",
+        "event_type": "MANIFEST",
+        "event_description": "SHIPMENT DEPARTED",
+        "event_location": "LONDON ( GATWICK )",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-13 02:20:45",
+        "updated_at": "2026-09-13 02:20:50",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4446720",
+        "docket_id": "182033",
+        "event_at": "2026-09-14 13:35:00",
+        "event_type": "SYSTEM",
+        "event_description": "SHIPMENT PREPARED FOR EXPORT",
+        "event_location": "INDIA",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-12 15:58:32",
+        "updated_at": "2026-09-12 21:24:45",
+        "event_state": "manifest",
+        "event_remark": ""
+      },
+      {
+        "id": "4434685",
+        "docket_id": "182033",
+        "event_at": "2026-09-11 17:22:46",
+        "event_type": "SYSTEM",
+        "event_description": "SHIPMENT ARRIVED AT HUB",
+        "event_location": "INDIA",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-11 17:22:46",
+        "updated_at": "2026-09-11 17:22:46",
+        "event_state": "in_scan",
+        "event_remark": ""
+      },
+      {
+        "id": "4436540",
+        "docket_id": "182033",
+        "event_at": "2026-09-11 14:23:00",
+        "event_type": "API",
+        "event_description": "Documentation Prepared",
+        "event_location": "London - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-11 22:18:24",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4436542",
+        "docket_id": "182033",
+        "event_at": "2026-09-11 14:23:00",
+        "event_type": "API",
+        "event_description": "Shipment Finalised",
+        "event_location": "London - UNITED KINGDOM",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-11 22:18:24",
+        "updated_at": "2026-09-18 11:54:15",
+        "event_state": "in_transit",
+        "event_remark": ""
+      },
+      {
+        "id": "4420764",
+        "docket_id": "182033",
+        "event_at": "2026-09-10 18:22:10",
+        "event_type": "SYSTEM",
+        "event_description": "SHIPMENT HAS BEEN BOOKED",
+        "event_location": "AHMEDABAD",
+        "add_city": "",
+        "add_state_or_province_code": "",
+        "add_postal_code": "",
+        "add_country_code": "",
+        "add_country_name": "",
+        "created_at": "2026-09-10 18:22:12",
+        "updated_at": "2026-09-10 18:22:12",
+        "event_state": "entry",
+        "event_remark": ""
+      }
+    ]
+  }
+]

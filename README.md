@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shreeji International Courier & Tracking Platform
 
-## Getting Started
+Monorepo containing the Shreeji International marketing site and its International Courier
+Tracking System: a Laravel + MySQL API, a public tracking UI, and an admin panel for shipment
+management.
 
-First, run the development server:
+```text
+project-root/
+├── apps/
+│   ├── frontend/   React 19 + Vite + TypeScript + Tailwind (marketing site, tracking UI, admin panel)
+│   └── backend/    Laravel 13 + MySQL (tracking API)
+├── package.json    Root workspace scripts (one-command dev/build/test/lint)
+└── README.md
+```
+
+## Prerequisites
+
+- Node.js 18+ and npm
+- PHP 8.3+ and Composer (on PATH)
+- MySQL 8 server running locally
+
+## Setup
+
+```bash
+npm install                     # installs root + frontend deps (npm workspaces)
+npm run backend:install         # composer install for the Laravel API
+```
+
+Copy environment files:
+
+```bash
+cp apps/backend/.env.example apps/backend/.env
+cp apps/frontend/.env.example apps/frontend/.env.local
+```
+
+Edit `apps/backend/.env` with your local MySQL credentials, then:
+
+```bash
+cd apps/backend && php artisan key:generate && cd ../..
+npm run backend:migrate:fresh   # migrate + seed demo shipments and an admin user
+```
+
+Demo admin login (seeded): `admin@shreejiintl.com` / `Shreeji@Admin2026`
+
+Demo tracking numbers (seeded): `SIC2026081001` … `SIC2026081006`
+
+## Running
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Starts both the frontend (Vite, http://localhost:3000) and the backend (Laravel, http://localhost:8010)
+together from the root. Individual servers: `npm run dev:frontend`, `npm run dev:backend`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other root scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build     # production build of the frontend
+npm run lint       # eslint on the frontend
+npm run test       # frontend lint + backend PHPUnit feature tests
+```
 
-## Learn More
+Backend-specific:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run backend:migrate         # run pending migrations
+npm run backend:migrate:fresh   # drop, re-migrate, and reseed
+npm run backend:seed            # reseed without dropping tables
+npm run test:backend            # php artisan test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**`apps/backend/.env`**
 
-## Deploy on Vercel
+```env
+APP_URL=http://localhost:8010
+FRONTEND_URL=http://localhost:3000   # used for CORS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=shreeji_tracking
+DB_USERNAME=shreeji_app
+DB_PASSWORD=
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**`apps/frontend/.env.local`**
+
+```env
+VITE_API_URL=http://localhost:8010/api
+```
+
+## Tracking System overview
+
+- Public tracking search + timeline: home page "Tracking" section, backed by `GET /api/tracking/{trackingNumber}`.
+- Admin panel at `/admin` (login required): create/edit/delete shipments, add tracking events, search/filter.
+- All tracking data is stored in MySQL and served through the Laravel API nothing is hard-coded in the frontend.
+- Courier providers (DHL, FedEx, UPS, Aramex, USPS, Royal Mail, TNT) are stored in a `courier_providers`
+  table so more can be added without code changes; there is no live integration with real courier APIs.
