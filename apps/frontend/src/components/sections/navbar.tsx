@@ -1,4 +1,5 @@
 import { useEffect, useState, type MouseEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { MoonStar, SunMedium, PackageSearch, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/hooks/use-theme";
@@ -7,6 +8,14 @@ import { cn } from "@/lib/utils";
 // Order matches the page's actual scroll order, so the active nav item
 // tracks smoothly as the user scrolls from one section to the next.
 const links = ["Home", "Tracking", "About", "Services", "Testimonials", "Contact"];
+
+// Section ids driven by the header links, used to validate the `/:section`
+// route param so unknown paths don't attempt to scroll to a missing element.
+export const SECTION_IDS = links.map((link) => link.toLowerCase());
+
+export function pathForSection(sectionId: string) {
+  return sectionId === "home" ? "/" : `/${sectionId}`;
+}
 
 export function scrollToSection(event: MouseEvent<HTMLAnchorElement>, sectionId: string) {
   event.preventDefault();
@@ -18,6 +27,7 @@ export function scrollToSection(event: MouseEvent<HTMLAnchorElement>, sectionId:
 }
 
 export function Navbar() {
+  const navigate = useNavigate();
   const { theme, toggleTheme, mounted } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -40,6 +50,14 @@ export function Navbar() {
   // IntersectionObserver with a narrow threshold band was tried first but
   // is unreliable for fast/instant scrolls that skip past a thin band
   // between two observer callbacks; this direct calculation isn't.
+  //
+  // The same computation also keeps the address bar in sync with whichever
+  // section is on screen, via history.replaceState — not navigate()/pushState,
+  // so scrolling never floods browser history or fights back/forward; those
+  // still walk the entries created by actual nav clicks, replaceState just
+  // silently keeps the *current* entry's URL accurate. history.state is
+  // preserved (only the URL portion changes) so react-router's own
+  // bookkeeping for that entry stays intact.
   useEffect(() => {
     const sectionIds = links.map((link) => link.toLowerCase());
     const sections = sectionIds
@@ -48,7 +66,9 @@ export function Navbar() {
 
     if (sections.length === 0) return;
 
-    const computeActive = () => {
+    let lastSyncedSection = sections[0].id;
+
+    const computeActive = (syncUrl: boolean) => {
       const referenceY = window.innerHeight * 0.35;
       let current = sections[0].id;
       for (const section of sections) {
@@ -57,19 +77,35 @@ export function Navbar() {
         }
       }
       setActiveSection(current);
+
+      if (syncUrl && current !== lastSyncedSection) {
+        lastSyncedSection = current;
+        const path = pathForSection(current);
+        if (window.location.pathname !== path) {
+          window.history.replaceState(window.history.state, "", path);
+        }
+      }
     };
 
-    computeActive();
-    window.addEventListener("scroll", computeActive, { passive: true });
-    window.addEventListener("resize", computeActive);
+    // Establish the initial active section (and baseline for lastSyncedSection)
+    // from scroll position alone, without touching the URL — a direct visit to
+    // /about must keep that URL until the user actually scrolls elsewhere,
+    // rather than being clobbered back to "/" before the deep-link scroll runs.
+    computeActive(false);
+    const handleScroll = () => computeActive(true);
+    const handleResize = () => computeActive(true);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("scroll", computeActive);
-      window.removeEventListener("resize", computeActive);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const onNavLinkClick = (event: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    scrollToSection(event, sectionId);
+    event.preventDefault();
+    navigate(pathForSection(sectionId));
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
     setMobileOpen(false);
   };
 
@@ -113,8 +149,8 @@ export function Navbar() {
               return (
                 <a
                   key={link}
-                  href={sectionId === "home" ? "/" : `#${sectionId}`}
-                  onClick={(event) => scrollToSection(event, sectionId)}
+                  href={pathForSection(sectionId)}
+                  onClick={(event) => onNavLinkClick(event, sectionId)}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "relative py-1 transition-colors hover:text-foreground",
@@ -173,7 +209,7 @@ export function Navbar() {
                   return (
                     <a
                       key={link}
-                      href={sectionId === "home" ? "/" : `#${sectionId}`}
+                      href={pathForSection(sectionId)}
                       onClick={(event) => onNavLinkClick(event, sectionId)}
                       aria-current={isActive ? "page" : undefined}
                       className={cn(

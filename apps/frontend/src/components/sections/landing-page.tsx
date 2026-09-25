@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqSection } from "@/components/sections/faq-section";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { Footer } from "@/components/sections/footer";
 import { GlobalCoverageSection } from "@/components/sections/global-coverage-section";
 import { HeroSection } from "@/components/sections/hero-section";
-import { Navbar } from "@/components/sections/navbar";
+import { Navbar, SECTION_IDS } from "@/components/sections/navbar";
 import { ServicesSection } from "@/components/sections/services-section";
 import { StatsSection } from "@/components/sections/stats-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
@@ -16,11 +17,22 @@ import { TrackingSection } from "./tracking-section";
 
 export function LandingPage() {
   const [showLoader, setShowLoader] = useState(true);
+  const { section } = useParams<{ section?: string }>();
 
   useEffect(() => {
     const timer = setTimeout(() => setShowLoader(false), 900);
     return () => clearTimeout(timer);
   }, []);
+
+  // Keeps direct/deep-link access, browser back/forward, and header clicks
+  // all landing on the right section, since this is a single scrolling page.
+  // No/unrecognized section (the root path) means "home", not "stay put" —
+  // otherwise navigating back to "/" from a scrolled section leaves the
+  // viewport wherever it was instead of returning to the top.
+  useEffect(() => {
+    const targetId = section && SECTION_IDS.includes(section) ? section : "home";
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [section]);
 
   return (
     <>
